@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pokémon Unite DB — Lite</title>
+  <meta name="description" content="A tiny static Pokémon Unite DB with filters and tier list. Red/White/Black theme.">
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+</head>
+<body class="bg-pokeballs">
+  <header class="nav">
+    <div class="brand">
+      <span class="pokeball" aria-hidden="true"></span>
+      <span>Unite<span class="accent">DB</span> Lite</span>
+    </div>
+    <nav>
+      <a href="#pokemon">Pokémon</a>
+      <a href="#tier">Tier List</a>
+      <a href="#about">About</a>
+    </nav>
+    <div class="bg-toggle" aria-label="Background">
+      <span>BG:</span>
+      <button class="bg-btn active" data-bg="pokeballs" type="button">Pokéballs</button>
+      <button class="bg-btn" data-bg="center" type="button">Center</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="hero">
+      <h1>Pokémon Unite — Mini Database</h1>
+      <p class="muted">Gotta Catch 'Em All! • ポケモンGETだぜ! •  Filter by role or name. <span class="badge">Last updated: 2025-08-24</span></p>
+    </section>
+
+    <section id="controls" aria-label="Filters">
+      <div class="filters" role="toolbar">
+        <button class="chip active" data-role="all" aria-pressed="true">All</button>
+        <button class="chip" data-role="Attacker" aria-pressed="false">Attacker</button>
+        <button class="chip" data-role="All-Rounder" aria-pressed="false">All‑Rounder</button>
+        <button class="chip" data-role="Defender" aria-pressed="false">Defender</button>
+        <button class="chip" data-role="Speedster" aria-pressed="false">Speedster</button>
+        <button class="chip" data-role="Supporter" aria-pressed="false">Support</button>
+      </div>
+      <div class="searchbar">
+        <input id="searchInput" type="search" placeholder="Search by name…" aria-label="Search Pokémon by name" />
+      </div>
+    </section>
+
+    <section id="pokemon">
+      <div id="cardGrid" class="grid" aria-live="polite">
+        <!-- Attacker - Pikachu -->
+        <article class="card" data-role="Attacker" data-name="Pikachu">
+          <div class="role role-attacker">Attacker</div>
+          <img class="poke" src="assets/img/pikachu.png" alt="Pikachu thumbnail" loading="lazy" />
+          <h3>Pikachu</h3>
+          <p class="desc">Ranged damage dealer with strong burst and poke. Great at punishing over-extensions.</p>
+          <p><a href="pokemon/pikachu.html">Learn more →</a></p>
+        </article>
+
+        <!-- All-Rounder - Charizard -->
+        <article class="card" data-role="All-Rounder" data-name="Charizard">
+          <div class="role role-allrounder">All‑Rounder</div>
+          <img class="poke" src="assets/img/charizard.png" alt="Charizard thumbnail" loading="lazy" />
+          <h3>Charizard</h3>
+          <p class="desc">Flexible bruiser that can peel or dive; scales well into team fights with Unite Move.</p>
+          <p><a href="pokemon/charizard.html">Learn more →</a></p>
+        </article>
+
+        <!-- Defender - Snorlax -->
+        <article class="card" data-role="Defender" data-name="Snorlax">
+          <div class="role role-defender">Defender</div>
+          <img class="poke" src="assets/img/snorlax.png" alt="Snorlax thumbnail" loading="lazy" />
+          <h3>Snorlax</h3>
+          <p class="desc">Frontline tank with great crowd control and peel, excels at creating safe space.</p>
+          <p><a href="pokemon/snorlax.html">Learn more →</a></p>
+        </article>
+
+        <!-- Speedster - Gengar -->
+        <article class="card" data-role="Speedster" data-name="Gengar">
+          <div class="role role-speedster">Speedster</div>
+          <img class="poke" src="assets/img/gengar.png" alt="Gengar thumbnail" loading="lazy" />
+          <h3>Gengar</h3>
+          <p class="desc">High mobility assassin that excels at picks and backline pressure when ahead.</p>
+          <p><a href="pokemon/gengar.html">Learn more →</a></p>
+        </article>
+
+        <!-- Supporter - Blissey -->
+        <article class="card" data-role="Supporter" data-name="Blissey">
+          <div class="role role-supporter">Support</div>
+          <img class="poke" src="assets/img/blissey.png" alt="Blissey thumbnail" loading="lazy" />
+          <h3>Blissey</h3>
+          <p class="desc">Top-tier enabler with heals and buffs. Keeps carries alive and fights stable.</p>
+          <p><a href="pokemon/blissey.html">Learn more →</a></p>
+        </article>
+      </div>
+      <div id="empty" class="empty hidden">No results. Try a different role or search.</div>
+    </section>
+
+    <hr class="sep" />
+
+    <section id="tier">
+      <h2>Tier List (Sample)</h2>
+      <p class="muted tiny">Simple S/A/B snapshot just to demo layout. Edit text freely.</p>
+
+      <div class="tier S">
+        <div class="label">S</div>
+        <div class="items">
+          <span class="badge-chip"><a href="pokemon/pikachu.html">Pikachu</a><small>Attacker</small></span>
+          <span class="badge-chip"><a href="pokemon/snorlax.html">Snorlax</a><small>Defender</small></span>
+        </div>
+      </div>
+
+      <div class="tier A">
+        <div class="label">A</div>
+        <div class="items">
+          <span class="badge-chip"><a href="pokemon/charizard.html">Charizard</a><small>All‑Rounder</small></span>
+          <span class="badge-chip"><a href="pokemon/blissey.html">Blissey</a><small>Support</small></span>
+          <span class="badge-chip"><a href="pokemon/gengar.html">Gengar</a><small>Speedster</small></span>
+        </div>
+      </div>
+
+      <div class="tier B">
+        <div class="label">B</div>
+        <div class="items">
+          <span class="badge-chip">—<small>add more</small></span>
+        </div>
+      </div>
+    </section>
+
+    <hr class="sep" />
+
+    <section id="about">
+      <h2>About</h2>
+      <p class="muted tiny">This site is a lite version of unite-db.com.</p>
+      <p class="tiny">Disclaimer: Not affiliated with Nintendo, The Pokémon Company, TiMi Studios, or Tencent. Pokémon and all respective properties are trademarks of their owners.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <small>© 2025 UniteDB Lite • by Malfarta</small>
+  </footer>
+
+  <script src="app.js"></script>
+  <script src="bg.js"></script>
+  <script src="top.js"></script>
+</body>
+</html>

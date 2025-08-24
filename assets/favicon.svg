@@ -1,0 +1,7 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'>
+  <defs><style>.s{stroke:#111;stroke-width:3;fill:#fff}</style></defs>
+  <circle cx='32' cy='32' r='30' class='s'/>
+  <path d='M2 32 H62' stroke='#111' stroke-width='3'/>
+  <path d='M2,32 A30,30 0 0,1 62,32' fill='#e3350d'/>
+  <circle cx='32' cy='32' r='8' class='s'/>
+</svg>
